@@ -31,6 +31,14 @@
       "cor": "prata",
       "ano": "2012",
       "valor": "7000"
+    },
+    {
+      "id": "00002",
+      "marca": "Volkswagem",
+      "modelo": "Gol",
+      "cor": "preto",
+      "ano": "2023",
+      "valor": "450000"
     }
   ]
 }
