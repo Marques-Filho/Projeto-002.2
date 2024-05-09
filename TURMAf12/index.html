@@ -33,13 +33,10 @@
       <div class="collapse navbar-collapse menu-sublinhado" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link navbar-brand text-white rounded-3" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link navbar-brand text-white rounded-3" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white rounded-3" href="#con">Consultar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white rounded-3" href="#cad">Cadastrar</a>
+            <a class="nav-link text-white rounded-3" href="btn-consultar">Consultar/Cadastrar/Editar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white rounded-3" href="#faq">FAQ</a>
@@ -78,8 +75,8 @@
         </div>
         <h3 class="fs-3 text-center pt-4"><i>Sinta-se à vontade para comprar ou cadastar seu carro para venda</i></h3>
         <br>
-        <h4 id="con" class="cc fs-5 text-start p-2 bg-dark rounded-3">Consultar Veículo - (Tabela 001 aqui)</h4>
-        <button id="btn-consultar" onclick="montaTabela()">Mostrar a tabela</button>
+        <h4 class="cc fs-5 text-start p-2 bg-dark rounded-3 text-center">Consultar/Cadastrar/Editar</h4>
+        <button class="btn btn-success fs-5 mt-3" id="btn-consultar" onclick="montaTabela()">Mostrar a tabela</button>
 
         <div class="container mt-5">
           <div class="btns">
@@ -116,7 +113,7 @@
               </div>
 
               <div>
-                <button id="btn-consultar1" class="btn-cadas" onclick="cadastrarCarros()">Cadastrar</button>
+                <button id="btn-consultar1" class="btn-cadas btn btn-danger fs-5 p-1" onclick="cadastrarCarros()">Cadastrar</button>
               </div>
 
             </div>
@@ -126,8 +123,8 @@
           <section>
 
           </section>
-          <table class="table">
-            <thead>
+          <table class="table border">
+            <thead">
               <tr>
                 <th>ID</th>
                 <th>MARCA</th>
@@ -144,7 +141,7 @@
         </div>
 
         <section>
-          <h4 id="faq" class="container p-1 mb-4 rounded-3">Perguntas Frequentes</h4>
+          <h4 id="faq" class="container p-1 mb-4 rounded-3 text-center">Perguntas Frequentes</h4>
           <div class="container pb-4">
             <div class="accordion" id="accordionExample">
               <div class="accordion-item">
@@ -183,15 +180,28 @@
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                   <div class="accordion-body text-start fs-5">
-                    Sim. Suporte para avaliação e uma rede de oficinas com serviços especializadas de qualidade para
-                    reparos necessários.
+                    Sim. Suporte para avaliação do seu veículo e uma rede de oficinas credenciadas para
+                    reparos necessários, tudo de acordo com sua demanda.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <strong>Terei ajuda para realizar os processos iniciais no site e na plataforma?</strong>
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body text-start fs-5">
+                    Sim. Nosso suporte ao cliente além de acompanhar todos os processos, está disponível para auxilio em todas as etapas, do cadastro à negociação.
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <h4 class="container p-1 mb-4 rounded-3">Ainda com alguma dúvida? Entre em contato</h4>
+        <h4 class="container p-1 mb-4 rounded-3 text-center">Ainda com alguma dúvida? Entre em contato</h4>
     </article>
   </main>
 

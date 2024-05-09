@@ -22,15 +22,15 @@
       "modelo": "SPORT",
       "cor": "AZUL METÁLICO",
       "ano": "2028",
-      "valor": "5000000"
+      "valor": "80000"
     },
     {
-      "id": "1234",
-      "marca": "BMW",
-      "modelo": "SPORT",
-      "cor": "AZUL METÁLICO",
-      "ano": "2028",
-      "valor": "80000"
+      "id": "00001",
+      "marca": "Fiat",
+      "modelo": "uno",
+      "cor": "prata",
+      "ano": "2012",
+      "valor": "7000"
     }
   ]
 }

@@ -39,7 +39,7 @@ body {
 }
 
 .cc {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.938), rgb(8, 8, 73));
+    background-image: linear-gradient(to right, rgb(4, 6, 92), rgba(0, 0, 0, 0.938));  
 }
 
 .menu-sublinhado { width:100%; float:left; }
