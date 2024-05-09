@@ -1,0 +1,36 @@
+{
+  "usuarios": [
+    {
+      "id": "123",
+      "nome": "Detran",
+      "idade": 1,
+      "email": "detran@digital.com.br"
+    }
+  ],
+  "carros": [
+    {
+      "id": "5678",
+      "marca": "BYD",
+      "modelo": "DOLPHIN",
+      "cor": "VERDE BEBE",
+      "ano": "2024",
+      "valor": "950000"
+    },
+    {
+      "id": "1234",
+      "marca": "BMW",
+      "modelo": "SPORT",
+      "cor": "AZUL METÁLICO",
+      "ano": "2028",
+      "valor": "5000000"
+    },
+    {
+      "id": "1234",
+      "marca": "BMW",
+      "modelo": "SPORT",
+      "cor": "AZUL METÁLICO",
+      "ano": "2028",
+      "valor": "80000"
+    }
+  ]
+}

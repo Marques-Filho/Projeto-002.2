@@ -1,0 +1,60 @@
+.inputs {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    gap: 5px;
+}
+
+label {
+    font-size: 15px;
+}
+
+.id {
+    width: 65px;
+    border-radius: 7px;
+}
+
+.marca {
+    width: 170px;
+    border-radius: 7px;
+}
+
+.modelo {
+    width: 80px;
+    border-radius: 7px;
+}
+
+.cor{
+    width: 110px;
+    border-radius: 7px;
+}
+
+.ano{
+    width: 70px;
+    border-radius: 7px;
+}
+
+.preco {
+    width: 150px;
+    border-radius: 7px;
+}
+
+.btn-cadas{
+    width: 150px;
+    height: 40px;
+    position: relative;
+    top: 21px;
+    border-radius: 7px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    background-color: brown;
+    color: azure;
+}
+
+.btn-cadas:hover {
+    background-color: red;
+    transition: 0.9s;
+    transform: scale(1.2);
+    margin-left: 15px;
+}
