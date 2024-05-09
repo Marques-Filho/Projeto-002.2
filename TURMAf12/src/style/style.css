@@ -1,4 +1,4 @@
-@import url(/src/style/tabela.css);
+@import url(./src/style/tabela.css);
 
 * {
     padding: 0px;
@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'newfont';
-    src: url(/src/font/62DRAGZ.otf) format(Opentype);
+    src: url(../font/62DRAGZ.otf) format(Opentype);
 }
 
 body {
