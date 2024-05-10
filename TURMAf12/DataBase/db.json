@@ -38,7 +38,23 @@
       "modelo": "Gol",
       "cor": "preto",
       "ano": "2023",
-      "valor": "450000"
+      "valor": "45000000"
+    },
+    {
+      "id": "00002",
+      "marca": "Volkswagem",
+      "modelo": "Gol",
+      "cor": "preto",
+      "ano": "2023",
+      "valor": "450000000"
+    },
+    {
+      "id": "00002",
+      "marca": "Volkswagem",
+      "modelo": "Gol",
+      "cor": "preto",
+      "ano": "2023",
+      "valor": "4500000070"
     }
   ]
 }

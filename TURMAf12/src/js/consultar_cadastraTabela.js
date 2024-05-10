@@ -181,19 +181,19 @@ document.getElementById("btn-consultar1").addEventListener("click", function() {
     }
 
     // convert image to base64
-    let reader = new FileReader();
-    reader.onload = function() {
-        let base64 = reader.result;
+    // let reader = new FileReader();
+    // reader.onload = function() {
+    //     let base64 = reader.result;
 
-        let body = {
-            id: id,
-            marca: marca,
-            modelo: modelo,
-            cor: cor,
-            ano: ano,
-            valor: valor,
-            image: base64 // incluir a imagem no corpo da requisição
-        };
+    //     let body = {
+    //         id: id,
+    //         marca: marca,
+    //         modelo: modelo,
+    //         cor: cor,
+    //         ano: ano,
+    //         valor: valor,
+    //         image: base64 // incluir a imagem no corpo da requisição
+    //     };
 
         if (id != null) {
             fetch(`http://localhost:3000/carros/${id}`, {
@@ -238,7 +238,6 @@ document.getElementById("btn-consultar1").addEventListener("click", function() {
             console.error('Erro ao cadastrar usuário:', error);
             alert('Erro ao cadastrar usuário.');
         });
-    };
 
     reader.readAsDataURL(inputImage);
 });
