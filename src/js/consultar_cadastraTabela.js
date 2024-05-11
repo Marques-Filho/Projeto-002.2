@@ -1,3 +1,11 @@
+let soma = 0
+let inputMARCA = document.getElementById('marca').value;
+let inputMODELO = document.getElementById('modelo').value;
+let inputCOR = document.getElementById('cor').value;
+let inputANO = document.getElementById('ano').value;
+let inputVALOR = document.getElementById('valor').value;
+
+
 function montaTabela() {
   fetch(`http://localhost:3000/carros`)
     .then(resposta => resposta.json())
@@ -46,32 +54,43 @@ function cadastrarCarros() {
     return;
   }
 
-  let novoCarro = {
-    id: id,
-    marca: marca,
-    modelo: modelo,
-    cor: cor,
-    ano: ano,
-    valor: valor,
-  };
-
-  fetch("http://localhost:3000/carros", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(novoCarro)
-    })
+  fetch(`http://localhost:3000/carros/${id}`)
     .then(response => response.json())
-    .then(data => {
-      alert("Carro cadastrado com sucesso!");
-      montaTabela();
+    .then(carro => {
+      if (carro) {
+        alert("Este carro já está cadastrado.");
+      } else {
+        let novoCarro = {
+          id: id,
+          marca: marca,
+          modelo: modelo,
+          cor: cor,
+          ano: ano,
+          valor: valor,
+        };
+
+        fetch("http://localhost:3000/carros", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(novoCarro)
+        })
+        .then(response => response.json())
+        .then(data => {
+          alert("Carro cadastrado com sucesso!");
+          montaTabela();
+        })
+        .catch(error => {
+          console.error("Erro ao cadastrar carro:", error);
+          res.status(500).json({
+            error: "Erro ao cadastrar o carro"
+          });
+        });
+      }
     })
     .catch(error => {
-      console.error("Erro ao cadastrar carro:", error);
-      res.status(500).json({
-        error: "Erro ao cadastrar o carro"
-      });
+      console.error("Erro ao verificar carro existente:", error);
     });
 }
 
@@ -91,8 +110,6 @@ function excluirCarro(id) {
       console.error('Erro ao excluir carro:', error);
     });
 }
-let soma = 0
-let booleano = false;
 
 function toggleTabela() {
         let booleano = false;
@@ -103,15 +120,24 @@ function toggleTabela() {
             document.getElementById('btn-consultar').innerText = "Ocultar Tabela";
         }
         if(soma == 2){
-          booleano = false;
-          soma = 0;
+            bool = false;
+            soma = 0;
             document.getElementById("tabela-javascript").style.visibility = "collapse";
             document.getElementById('btn-consultar').innerText = "Mostrar a Tabela";
         }
 }
 
+function limparFormulario() {
+  document.getElementById("id").value = "";
+  document.getElementById("marca").value = "";
+  document.getElementById("modelo").value = "";
+  document.getElementById("cor").value = "";
+  document.getElementById("ano").value = "";
+  document.getElementById("valor").value = "";
+}
 
 function editarCarro(id, marca, modelo, cor, ano, valor) {
+  // Preenche os campos com os valores do carro a ser editado
   document.getElementById('marca').value = marca;
   document.getElementById('modelo').value = modelo;
   document.getElementById('cor').value = cor;
@@ -144,45 +170,74 @@ document.getElementById("btn-consultar1").addEventListener("click", function () 
     valor: inputVALOR
   };
 
-  if (editID != null) {
-    fetch(`http://localhost:3000/carros/${editID}`, {
-        method: 'PUT',
-        body: JSON.stringify(body),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(resposta => {
-        if (resposta.ok) {
-          alert("Carro atualizado com sucesso!");
-          montaTabela()
-          editID = null;
+  fetch("http://localhost:3000/carros")
+    .then(response => response.json())
+    .then(carros => {
+      let carroExistente = carros.find(carro => 
+        carro.marca === inputMARCA && 
+        carro.modelo === inputMODELO &&
+        carro.cor === inputCOR &&
+        carro.ano === inputANO &&
+        carro.valor === inputVALOR
+      );
+      if (carroExistente && editID === null) {
+        alert("Este carro já está cadastrado.");
+      } else {
+        if (editID != null) {
+          fetch(`http://localhost:3000/carros/${editID}`, {
+              method: 'PUT',
+              body: JSON.stringify(body),
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+            .then(resposta => {
+              if (resposta.ok) {
+                alert("Carro atualizado com sucesso!");
+                montaTabela();
+                limparFormulario();
+                editID = null;
+                document.getElementById('id').style.display = 'inline'; // Restaura a exibição do input ID
+                document.getElementById('ids').style.display = 'inline'; // Restaura a exibição do label ID
+                document.getElementById('btn-consultar1').innerText = "Cadastrar";
+              } else {
+                console.error('Erro ao editar carro:', resposta.statusText);
+              }
+            })
+            .catch(error => {
+              console.error('Erro ao editar carro:', error);
+            });
         } else {
-          console.error('Erro ao editar carro:', resposta.statusText);
+          // Cadastra o novo carro
+          fetch("http://localhost:3000/carros", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(body)
+            })
+            .then(response => {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error('Erro ao cadastrar carro');
+              }
+            })
+            .then(data => {
+              alert("Carro cadastrado com sucesso!");
+              montaTabela();
+              limparFormulario();
+            })
+            .catch(error => {
+              console.error("Erro ao cadastrar carro:", error);
+              res.status(500).json({
+                error: "Erro ao cadastrar o carro"
+              });
+            });
         }
-      })
-      .catch(error => {
-        console.error('Erro ao editar carro:', error);
-      });
-  } else {
-    fetch("http://localhost:3000/carros", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(body)
-      })
-      .then(response => response.json())
-      .then(data => {
-        alert("Carro cadastrado com sucesso!");
-        montaTabela();
-        limparFormulario();
-      })
-      .catch(error => {
-        console.error("Erro ao cadastrar carro:", error);
-        res.status(500).json({
-          error: "Erro ao cadastrar o carro"
-        });
-      });
-  }
+      }
+    })
+    .catch(error => {
+      console.error("Erro ao buscar carros:", error);
+    });
 });
