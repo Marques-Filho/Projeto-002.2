@@ -145,24 +145,29 @@ function editarCarro(id, marca, modelo, cor, ano, valor) {
   document.getElementById('valor').value = valor;
 
   editID = id;
-  document.getElementById('id').style.display = 'none';
-  document.getElementById('ids').style.display = 'none';
+  document.getElementById("id").style.display = "none";
+  document.getElementById("ids").style.display = "none";
   document.getElementById('btn-consultar1').innerText = "Atualizar";
+  console.log(id)
 }
 
 document.getElementById("btn-consultar1").addEventListener("click", function () {
+  // let inputID = document.getElementById('id').value;
   let inputMARCA = document.getElementById('marca').value;
   let inputMODELO = document.getElementById('modelo').value;
   let inputCOR = document.getElementById('cor').value;
   let inputANO = document.getElementById('ano').value;
   let inputVALOR = document.getElementById('valor').value;
+  console.log(id)
 
   if (!inputMARCA || !inputMODELO || !inputCOR || !inputANO || !inputVALOR) {
     alert("Por favor, preencha todos os campos do veículo.");
     return;
+    
   }
 
   let body = {
+    // id: inputID,
     marca: inputMARCA,
     modelo: inputMODELO,
     cor: inputCOR,
