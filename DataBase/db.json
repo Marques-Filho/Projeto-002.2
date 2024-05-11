@@ -1,0 +1,28 @@
+{
+  "usuarios": [
+    {
+      "id": "123",
+      "nome": "Detran",
+      "idade": 1,
+      "email": "detran@digital.com.br"
+    }
+  ],
+  "carros": [
+    {
+      "marca": "TOYOTA ",
+      "modelo": "COROLLA",
+      "cor": "PRETO",
+      "ano": "2015",
+      "valor": "877",
+      "id": "d33b"
+    },
+    {
+      "marca": "HONDA",
+      "modelo": "CIVIC",
+      "cor": "AZUL",
+      "ano": "2012",
+      "valor": "5555",
+      "id": "4a42"
+    }
+  ]
+}
