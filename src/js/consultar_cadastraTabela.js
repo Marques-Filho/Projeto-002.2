@@ -148,7 +148,6 @@ function editarCarro(id, marca, modelo, cor, ano, valor) {
   document.getElementById("id").style.display = "none";
   document.getElementById("ids").style.display = "none";
   document.getElementById('btn-consultar1').innerText = "Atualizar";
-  console.log(id)
 }
 
 document.getElementById("btn-consultar1").addEventListener("click", function () {
