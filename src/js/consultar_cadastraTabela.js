@@ -92,6 +92,7 @@ function excluirCarro(id) {
     });
 }
 let soma = 0
+let booleano = false;
 
 function toggleTabela() {
         let booleano = false;
@@ -102,13 +103,11 @@ function toggleTabela() {
             document.getElementById('btn-consultar').innerText = "Ocultar Tabela";
         }
         if(soma == 2){
-            bool = false;
-            soma = 0;
+          booleano = false;
+          soma = 0;
             document.getElementById("tabela-javascript").style.visibility = "collapse";
             document.getElementById('btn-consultar').innerText = "Mostrar a Tabela";
         }
-        console.log(soma);
-        console.log(booleano);
 }
 
 
