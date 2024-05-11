@@ -91,19 +91,24 @@ function excluirCarro(id) {
       console.error('Erro ao excluir carro:', error);
     });
 }
+let soma = 0
 
 function toggleTabela() {
-  let tabela = document.getElementById('tabela-javascript');
-  let btn = document.getElementById('btn-consultar');
-
-  if (tabela.style.display === 'none' || tabela.style.display === '') {
-    tabela.style.display = 'block';
-    btn.innerText = 'Ocultar a tabela';
-
-  } else {
-    tabela.style.display = 'none';
-    btn.innerText = 'Mostrar a tabela';
-  }
+        let booleano = false;
+        soma += 1;
+            if(soma == 1){
+            booleano = true;
+            document.getElementById("tabela-javascript").style.visibility = "visible";
+            document.getElementById('btn-consultar').innerText = "Ocultar Tabela";
+        }
+        if(soma == 2){
+            bool = false;
+            soma = 0;
+            document.getElementById("tabela-javascript").style.visibility = "collapse";
+            document.getElementById('btn-consultar').innerText = "Mostrar a Tabela";
+        }
+        console.log(soma);
+        console.log(booleano);
 }
 
 

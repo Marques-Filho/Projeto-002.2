@@ -9,11 +9,11 @@
   ],
   "carros": [
     {
-      "marca": "TOYOTA ",
+      "marca": "TOYOuTA ",
       "modelo": "COROLLA",
       "cor": "PRETO",
       "ano": "2015",
-      "valor": "877",
+      "valor": "8345903477",
       "id": "d33b"
     },
     {

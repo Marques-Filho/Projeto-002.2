@@ -4,6 +4,9 @@
     margin: 0 auto;
     gap: 5px;
 }
+/* #tabela-javascript{
+    visibility: collapse;
+} */
 
 label {
     font-size: 15px;
