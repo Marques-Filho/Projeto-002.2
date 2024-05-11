@@ -9,20 +9,68 @@
   ],
   "carros": [
     {
-      "marca": "675",
-      "modelo": "COROLLA56",
-      "cor": "PRETO",
-      "ano": "2015",
-      "valor": "4524",
-      "id": "d33b"
+      "id": "b154",
+      "marca": "Toyota",
+      "modelo": "Yaris",
+      "cor": "prata",
+      "ano": "2024",
+      "valor": "84000"
     },
     {
-      "id": "098",
-      "marca": "675",
-      "modelo": "COROLLA56",
-      "cor": "PRETO",
-      "ano": "2015",
-      "valor": "4524"
+      "marca": "Fiat ",
+      "modelo": "Toro",
+      "cor": "preta ",
+      "ano": "2024",
+      "valor": "100000",
+      "id": "c1258"
+    },
+    {
+      "id": "d1547",
+      "marca": "Chevrolet",
+      "modelo": "Camaro",
+      "cor": "amarelo",
+      "ano": "2024",
+      "valor": "120000"
+    },
+    {
+      "id": "a6845",
+      "marca": "Volkswagen",
+      "modelo": "gol",
+      "cor": "preto",
+      "ano": "2021",
+      "valor": "36000"
+    },
+    {
+      "id": "n3534",
+      "marca": "Nissan",
+      "modelo": "Versa",
+      "cor": "branco",
+      "ano": "2022",
+      "valor": "72000"
+    },
+    {
+      "id": "m454",
+      "marca": "Audi",
+      "modelo": "A3",
+      "cor": "preta",
+      "ano": "2009",
+      "valor": "24000"
+    },
+    {
+      "id": "a234",
+      "marca": "BYD",
+      "modelo": "Dolphin",
+      "cor": "vermelho",
+      "ano": "2024",
+      "valor": "124000"
+    },
+    {
+      "id": "d853",
+      "marca": "Cherry",
+      "modelo": "Tiggo 8",
+      "cor": "prata",
+      "ano": "2022",
+      "valor": "142000"
     }
   ]
 }
