@@ -13,7 +13,8 @@
       "modelo": "COROLLA",
       "cor": "PRETO",
       "ano": "2015",
-      "valor": "83459089893477",
+
+      "valor": "4524",
       "id": "d33b"
     },
     {
@@ -21,8 +22,32 @@
       "modelo": "CIVIC",
       "cor": "AZUL",
       "ano": "2012",
-      "valor": "5555",
+      "valor": "123123",
       "id": "4a42"
+    },
+    {
+      "marca": "aedasda",
+      "modelo": "dasdas",
+      "cor": "dasdasd",
+      "ano": "3423",
+      "valor": "9999",
+      "id": "qweqw"
+    },
+    {
+      "marca": "1111111",
+      "modelo": "22222",
+      "cor": "12312332",
+      "ano": "87978931",
+      "valor": "666666",
+      "id": "9090"
+    },
+    {
+      "marca": "dfrdsf",
+      "modelo": "12323",
+      "cor": "23121",
+      "ano": "31231",
+      "valor": "7572",
+      "id": "qw1qweqw"
     }
   ]
 }

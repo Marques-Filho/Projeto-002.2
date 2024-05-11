@@ -119,6 +119,8 @@ function editarCarro(id, marca, modelo, cor, ano, valor) {
   document.getElementById('valor').value = valor;
 
   editID = id;
+  document.getElementById('id').style.display = 'none';
+  document.getElementById('ids').style.display = 'none';
   document.getElementById('btn-consultar1').innerText = "Atualizar";
 }
 
@@ -153,9 +155,7 @@ document.getElementById("btn-consultar1").addEventListener("click", function () 
       .then(resposta => {
         if (resposta.ok) {
           alert("Carro atualizado com sucesso!");
-          montaTabela();
-          limparFormulario();
-          document.getElementById('btn-consultar1').innerText = "Cadastrar";
+          montaTabela()
           editID = null;
         } else {
           console.error('Erro ao editar carro:', resposta.statusText);
