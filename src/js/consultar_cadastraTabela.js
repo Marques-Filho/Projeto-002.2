@@ -112,6 +112,7 @@ function toggleTabela() {
 
 
 function editarCarro(id, marca, modelo, cor, ano, valor) {
+  // document.getElementById('id').value = id;
   document.getElementById('marca').value = marca;
   document.getElementById('modelo').value = modelo;
   document.getElementById('cor').value = cor;
@@ -119,24 +120,29 @@ function editarCarro(id, marca, modelo, cor, ano, valor) {
   document.getElementById('valor').value = valor;
 
   editID = id;
-  document.getElementById('id').style.display = 'none';
-  document.getElementById('ids').style.display = 'none';
+  document.getElementById("id").style.display = "none";
+  document.getElementById("ids").style.display = "none";
   document.getElementById('btn-consultar1').innerText = "Atualizar";
+  console.log(id)
 }
 
 document.getElementById("btn-consultar1").addEventListener("click", function () {
+  // let inputID = document.getElementById('id').value;
   let inputMARCA = document.getElementById('marca').value;
   let inputMODELO = document.getElementById('modelo').value;
   let inputCOR = document.getElementById('cor').value;
   let inputANO = document.getElementById('ano').value;
   let inputVALOR = document.getElementById('valor').value;
+  console.log(id)
 
   if (!inputMARCA || !inputMODELO || !inputCOR || !inputANO || !inputVALOR) {
     alert("Por favor, preencha todos os campos do veículo.");
     return;
+    
   }
 
   let body = {
+    // id: inputID,
     marca: inputMARCA,
     modelo: inputMODELO,
     cor: inputCOR,
@@ -157,6 +163,11 @@ document.getElementById("btn-consultar1").addEventListener("click", function () 
           alert("Carro atualizado com sucesso!");
           montaTabela()
           editID = null;
+          document.getElementById('btn-consultar1').innerText = "Cadastrar";
+          document.getElementById("id").style.display = "inline";
+          document.getElementById("ids").style.display = "inline";
+
+
         } else {
           console.error('Erro ao editar carro:', resposta.statusText);
         }
@@ -164,25 +175,13 @@ document.getElementById("btn-consultar1").addEventListener("click", function () 
       .catch(error => {
         console.error('Erro ao editar carro:', error);
       });
-  } else {
-    fetch("http://localhost:3000/carros", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(body)
-      })
-      .then(response => response.json())
-      .then(data => {
-        alert("Carro cadastrado com sucesso!");
-        montaTabela();
-        limparFormulario();
-      })
-      .catch(error => {
-        console.error("Erro ao cadastrar carro:", error);
-        res.status(500).json({
-          error: "Erro ao cadastrar o carro"
-        });
-      });
   }
 });
+document.getElementById("btn-consultar1").addEventListener("click", function () {
+if(document.getElementById('btn-consultar1').innerText = "Atualizar"){
+  montaTabela();
+}
+if(document.getElementById('btn-consultar1').innerText = "Cadastrar"){
+  cadastrarCarros();
+}
+})
